@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Nuku Nuku;
+  src: url(design/nuku-nuku.regular.ttf);
+}
+
+/* FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  /* there may be times where the user would want to increase the font size of the browser. hence, setting to an absolute value (10px) is not ideal. set to a percentage instead so that the container sizes also adjsut accordingly to the font size that was set by the user browsing the website */
+  font-size: 62.5%;
+  font-family: Nuku Nuku, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(design/4825998.gif);
+}
+
+h1 {
+  color: #e9edf9;
+  font-size: 10rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: Nuku Nuku, sans-serif;
+  letter-spacing: 1rem;
+}
+
+#top-row {
+  display: flex;
+  color: #e9edf9;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  border: 1rem solid #b7b8ce;
+  width: 70rem;
+  height: 55.5rem;
+  margin: auto;
+  background-color: #041c4490;
+}
+
+.card--container {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  width: 60rem;
+  height: 18rem;
+  margin: 3rem auto;
+}
+
+.suit {
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
+.name {
+  font-size: 2.4rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.red {
+  color: red;
+}
+
+.card--info {
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 3rem;
+  height: 12rem;
+  background-color: white;
+  text-align: center;
+  border: 0.3rem solid black;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-containers {
+  align-self: center;
+  margin-bottom: 1.2rem;
+}
+
+.message-output {
+  font-size: 3.2rem;
+  color: #e9edf9;
+  letter-spacing: 0.2rem;
+  align-self: center;
+  margin-bottom: 1.2rem;
+}
+
+.flipcard {
+  /* transform: rotateY(180deg); */
+  border: 3px solid red;
+  transform: translateY(-1.2rem);
+  box-shadow: 0 2.5rem 3.2rem rgba(74, 69, 69, 0.129);
+}
+
+.reset-msg {
+  color: #e9edf9;
+  font-size: 2.4rem;
+  letter-spacing: 0.2rem;
+}
+
+.reset-option-box {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.final-btn {
+  align-self: center;
+}
+
+.deal-btn,
+.dispose-btn,
+.yes,
+.no {
+  padding: 1.2rem 2.4rem;
+  border-radius: 1.4rem;
+  border-color: transparent;
+  cursor: pointer;
+  letter-spacing: 0.2rem;
+  background-color: #6d1961e0;
+  color: white;
+  font-size: 1.8rem;
+  font-family: Train One, sans-serif;
+}
+
+.yes {
+  margin-right: 0.2rem;
+}
+
+.play-btn,
+.mute-btn {
+  cursor: pointer;
+}

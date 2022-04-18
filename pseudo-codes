@@ -1,0 +1,58 @@
+Just thinking about the replacing of cards
+
+- cards will be replaced directly into the array?
+- meaning card[2] chosen so the new card will replace that card at that position right?
+- but how to ensure that it does that?
+
+Conditions for winning:
+==== THINK OF HOW TO INCORPORATE TALLY FUNCTIONS ====
+
+1. Jacks or Better (done)
+
+   - rankCounter = 11 | 12 | 13
+   - strictly 2 cards of either ranks
+
+2. Two Pairs (done)
+
+   - Can use a for loop?
+   - can this be coupled with Jacks or Better?
+
+3. Three of a Kind (done)
+
+   - Loop through the array and find if got three of the same ranked cards
+   - use a counter to keep track of how many cards of the same rank? like the tic tac toe result validation
+
+4. Four of a kind (done)
+
+   - same as three of a kind, just that now is 4 cards of the same rank
+
+   5. Straight (done except high card ace straight hand)
+
+   - Rank of the cards are of a difference of 1
+   - exception: 10 | J | Q | K | A
+     - Hence need to have a if statement on when rankCounter = 1
+
+5. Flush (done)
+
+   - all cards have the same suit
+
+6. Full House (done)
+
+   - Three of a Kind + One pair (any rank is possible)
+   - maybe this can be a subset under Three of a Kind. would have an if statement for Full house in the Three of a Kind function.
+
+7. Straight Flush (done)
+
+   - combination of flush and straight
+
+8. Royal Flush (done)
+   - 10 | J | Q | K | A same suit.
+   - so i suppose royal Flush is a subset of Straight Flush and hence, would have an if statement for royal flush in the Straight flush function.
+
+- empty that position of array and pop the card out?
+
+
+some ideas for restarting the game:
+when the winning conditions are calculated, immediately execute setTimeout function
+--- Next round in (insert the setTimeout function here so that the countdown blinks to 0)
+--- also have a button where they can just immediately click reset

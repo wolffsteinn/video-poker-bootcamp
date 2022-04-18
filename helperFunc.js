@@ -204,13 +204,16 @@ const playBtnHit = () =>{
   document.querySelector(".mute-btn").style.display = "block";
   document.querySelector(".play-btn").style.display = "none";
   document.querySelector(".audio").muted = true;
+  console.log("play btn hit")
 }
 
 // when user hits the mute button, song continues to play
 const muteBtnHit = () =>{
   document.querySelector(".play-btn").style.display = "block";
   document.querySelector(".mute-btn").style.display = "none";
+  document.querySelector(".audio").play()
   document.querySelector(".audio").muted = false;
+  console.log("mute btn hit")
 }
 
 playBtn.addEventListener("click", ()=> playBtnHit())

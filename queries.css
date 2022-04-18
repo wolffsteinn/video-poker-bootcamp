@@ -1,0 +1,88 @@
+/* rem and em do NOT depend on html font-size in media queries. Instead, 1rem = 1em = 16px  */
+
+/**************************/
+/* BELOW 704PX SECTION (smaller tablets)*/
+/**************************/
+@media (max-width: 44em) {
+  h1 {
+    font-size: 8rem;
+  }
+  #top-row {
+    margin-top: 2rem;
+    font-size: 2.4rem;
+  }
+  .main-container {
+    width: 55rem;
+    height: 50rem;
+  }
+  .card--container {
+    padding: 1rem;
+    width: 50rem;
+    height: 18rem;
+    margin: 2rem auto;
+  }
+  .message-output {
+    font-size: 2.4rem;
+  }
+  .deal-btn,
+  .dispose-btn,
+  .yes,
+  .no {
+    padding: 1rem 2rem;
+    border-radius: 1.4rem;
+    letter-spacing: 0.2rem;
+    font-size: 1.4rem;
+  }
+  .reset-msg {
+    font-size: 2rem;
+  }
+}
+
+/**************************/
+/* BELOW 544PX SECTION (smaller tablets)*/
+/**************************/
+@media (max-width: 34em) {
+  h1 {
+    font-size: 6rem;
+    letter-spacing: 0.2rem;
+  }
+  .main-container {
+    width: 45rem;
+    height: 40rem;
+  }
+  .card--container {
+    display: flex;
+    padding: 1rem;
+    width: 40rem;
+    height: 18rem;
+    margin: 1rem auto;
+  }
+  .suit {
+    font-size: 1.6rem;
+  }
+
+  .name {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .card--info {
+    font-size: 2rem;
+    margin: 0.5rem;
+    padding: 2rem;
+    height: 9rem;
+  }
+  .message-output {
+    font-size: 1.8rem;
+  }
+  .reset-msg {
+    font-size: 1.6rem;
+  }
+  .deal-btn,
+  .dispose-btn,
+  .yes,
+  .no {
+    padding: 0.8rem 1.6rem;
+    border-radius: 1.4rem;
+    font-size: 1rem;
+  }
+}

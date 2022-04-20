@@ -113,6 +113,7 @@ h1 {
   letter-spacing: 0.2rem;
   align-self: center;
   margin-bottom: 1.2rem;
+  text-align: center;
 }
 
 .flipcard {
@@ -121,6 +122,8 @@ h1 {
   transform: translateY(-1.2rem);
   box-shadow: 0 2.5rem 3.2rem rgba(74, 69, 69, 0.129);
 }
+
+/* elements relating to the reset part of the game */
 
 .reset-msg {
   color: #e9edf9;
@@ -132,6 +135,7 @@ h1 {
   align-self: center;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .final-btn {
@@ -141,7 +145,8 @@ h1 {
 .deal-btn,
 .dispose-btn,
 .yes,
-.no {
+.no,
+.just-reset {
   padding: 1.2rem 2.4rem;
   border-radius: 1.4rem;
   border-color: transparent;
@@ -150,14 +155,61 @@ h1 {
   background-color: #6d1961e0;
   color: white;
   font-size: 1.8rem;
-  font-family: Train One, sans-serif;
+  font-family: Reggae One, sans-serif;
 }
 
 .yes {
   margin-right: 0.2rem;
 }
 
+.just-reset {
+  /* moving reset button relative to the reset-option-box div */
+  position: absolute;
+  z-index: 9999;
+  right: 8%;
+  top: 33%;
+  width: 20rem;
+}
+
 .play-btn,
 .mute-btn {
   cursor: pointer;
+}
+
+/* paytable and its related elements */
+
+#paytable {
+  color: black;
+  font-family: Reggae One, sans-serif;
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  border: 1px solid transparent;
+  width: 40rem;
+  z-index: 9999;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 24%;
+  background-color: #e9edf9;
+}
+
+#scoring {
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+  font-family: Reggae One, sans-serif;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.small-text {
+  font-size: 1.6rem;
+}
+
+#score-table {
+  margin-left: auto;
+  margin-right: auto;
 }

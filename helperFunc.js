@@ -84,7 +84,6 @@ const createDeck = () => {
   return deckTwo;
 };
 
-
 /**
  * Function to extract metadata of cards to append onto browser
  * @param cardInfo {card} card that is extracted from the deck
@@ -114,12 +113,11 @@ const createCard = (cardInfo) => {
  * To check if the deck of cards is nearly empty
  * @returns a newly shuffled deck
  */
-const topUpCards = () =>{
-if (deck.length <= 10){
-  deck = shuffleCards(createDeck())
-}
-}
-
+const topUpCards = () => {
+  if (deck.length <= 10) {
+    deck = shuffleCards(createDeck());
+  }
+};
 
 // ================================================================================================
 // ================================================================================================
@@ -130,7 +128,6 @@ if (deck.length <= 10){
 // ================================================================================================
 
 let deck = shuffleCards(createDeck());
-
 
 let originalPoints = 100;
 const pointsCounter = document.querySelector('.points');
@@ -163,7 +160,7 @@ let hasRepeatedCards = true;
 // ================================================================================================
 // ================================================================================================
 // ================================================================================================
-const mainBox = document.querySelector(".main-container")
+const mainBox = document.querySelector('.main-container');
 
 const cardContainer = document.createElement('div');
 cardContainer.classList.add('card--container');
@@ -193,30 +190,49 @@ const output = (message) => {
 gameInfo.innerText = 'Ready for a round of Video Poker?';
 mainBox.appendChild(gameInfo);
 
-
 //  buttons for music
-const playBtn = document.querySelector(".play-btn")
-const muteBtn = document.querySelector(".mute-btn")
-const audio = document.querySelector(".audio")
+const playBtn = document.querySelector('.play-btn');
+const muteBtn = document.querySelector('.mute-btn');
+const audio = document.querySelector('.audio');
 
 // when user hits the play button, the song is muted
-const playBtnHit = () =>{
-  document.querySelector(".mute-btn").style.display = "block";
-  document.querySelector(".play-btn").style.display = "none";
-  document.querySelector(".audio").muted = true;
-  console.log("play btn hit")
-}
+const playBtnHit = () => {
+  document.querySelector('.mute-btn').style.display = 'block';
+  document.querySelector('.play-btn').style.display = 'none';
+  document.querySelector('.audio').muted = true;
+  console.log('play btn hit');
+};
 
 // when user hits the mute button, song continues to play
-const muteBtnHit = () =>{
-  document.querySelector(".play-btn").style.display = "block";
-  document.querySelector(".mute-btn").style.display = "none";
-  document.querySelector(".audio").play()
-  document.querySelector(".audio").muted = false;
-  console.log("mute btn hit")
-}
+const muteBtnHit = () => {
+  document.querySelector('.play-btn').style.display = 'block';
+  document.querySelector('.mute-btn').style.display = 'none';
+  document.querySelector('.audio').play();
+  document.querySelector('.audio').muted = false;
+  console.log('mute btn hit');
+};
 
-playBtn.addEventListener("click", ()=> playBtnHit())
-muteBtn.addEventListener("click", ()=> muteBtnHit())
+playBtn.addEventListener('click', () => playBtnHit());
+muteBtn.addEventListener('click', () => muteBtnHit());
 
-document.querySelector(".play-btn").style.display = "none";
+document.querySelector('.play-btn').style.display = 'none';
+
+// for the paytable
+const payTable = document.getElementById('paytable');
+const howToScore = document.getElementById('scoring');
+payTable.style.display = 'none';
+const testing = document.querySelector('.testing');
+
+const payTableAppear = () => {
+  console.log('clicked yet');
+  payTable.style.display = 'block';
+  payTable.style.visibility = 'visible';
+};
+
+const payTableDisapear = () => {
+  console.log('clicked');
+  payTable.style.visibility = 'hidden';
+};
+
+howToScore.addEventListener('click', () => payTableAppear());
+testing.addEventListener('click', () => payTableDisapear());

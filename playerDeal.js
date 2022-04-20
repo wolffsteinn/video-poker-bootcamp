@@ -1,5 +1,16 @@
 // to ensure that cards can only be selected during disposal turn
-let canClickCard = false
+let canClickCard = false;
+
+// reseting the arrays
+const emptyAll = () => {
+  cardContainer.innerHTML = '';
+  cardEl = [];
+  initialDraw = [];
+  cardRankTally = {};
+  cardNameTally = {};
+  cardSuitTally = {};
+  numOfPair = 0;
+};
 
 /**
  * Function to replace cards selected by user
@@ -7,14 +18,14 @@ let canClickCard = false
  */
 const replaceCardsFunc = () => {
   // moving to replace cards; canClick to false
-  canClickCard = false
+  canClickCard = false;
   // check if cards in the array are nearly empty. if so, top up
-  topUpCards()
+  topUpCards();
   console.log('click successful');
   for (let i = 0; i < cardEl.length; i += 1) {
     if (cardEl[i].classList.contains('flipcard')) {
       newCard = deck.pop();
-      const newCardEl = createCard(newCard);
+      let newCardEl = createCard(newCard);
       cardEl[i].remove();
       cardEl[i] = newCardEl;
 
@@ -51,26 +62,14 @@ const disposeCards = () => {
   }
 };
 
-// reseting the arrays
-const emptyAll = () => {
-  cardContainer.innerHTML = '';
-  cardEl = [];
-  initialDraw = [];
-  cardRankTally = {};
-  cardNameTally = {};
-  cardSuitTally = {};
-  numOfPair = 0;
-};
-
 /**
  * Function to initialize game
  * @returns a visual of the 5 cards randomly drawn to start the game; linking to the disposeCards function
  */
-
 const playerDeal = () => {
   // check if cards in the array are nearly empty. if so, top up
-  topUpCards()
-  console.log(deck)
+  topUpCards();
+  console.log(deck);
   document.querySelector('.dispose-btn').style.visibility = 'visible';
   emptyAll();
 
@@ -89,7 +88,7 @@ const playerDeal = () => {
   document.querySelector('.deal-btn').style.visibility = 'hidden';
   // moving on to disposal - change canClick = true
   output('Select cards to dispose');
-  canClickCard = true
+  canClickCard = true;
   disposeCards();
 };
 

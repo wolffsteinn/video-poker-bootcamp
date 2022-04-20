@@ -87,7 +87,6 @@ const fourOfAKind = () => {
   for (cardRank in cardRankTally) {
     if (cardRankTally[cardRank] === 4) {
       fourCards = true;
-      console.log(fourCards);
       return true;
     }
   }
@@ -179,7 +178,6 @@ const fiveSameSuit = () => {
   for (cardSuit in cardSuitTally){
     if (cardSuitTally[cardSuit] === 5) {
       isFlush = true;
-      console.log(isFlush);
       return isFlush;
     }
   }
@@ -238,67 +236,55 @@ const threeOfAKind = () => {
 
 /**
  * Function to check the winning hand
- * @returns the name of the winning hand(if any); the points won/lost; option to reset the game 
+ * @returns the name of the winning hand(if any); the points won/lost; option to reset the game
  */
 
 const resultValidation = () => {
   document.querySelector('.dispose-btn').style.visibility = 'hidden';
-  console.log(cardRankTally);
   if (royalFlush() === true) {
-    console.log('royal flush');
     originalPoints += 800;
     pointsCounter.innerHTML = originalPoints;
     output('ROYAL FLUSH');
   } else if (straightFlush() === true) {
-    console.log('straight flush');
     originalPoints += 50;
     pointsCounter.innerHTML = originalPoints;
     output('Straight Flush!');
   } else if (fourOfAKind() === true) {
-    console.log('four of a kind');
     originalPoints += 25;
     pointsCounter.innerHTML = originalPoints;
     output('four of a kind');
   } else if (fullHouse() === true) {
-    console.log('fullhouse');
     originalPoints += 9;
     pointsCounter.innerHTML = originalPoints;
     output('Full House!');
   } else if (flushHand() === true) {
-    console.log('flush');
     originalPoints += 6;
     pointsCounter.innerHTML = originalPoints;
     output('flush!');
   } else if (highAceStraights() === true) {
-    console.log('straight');
     originalPoints += 4;
     pointsCounter.innerHTML = originalPoints;
     output('Straights!');
   } else if (straights() === true) {
-    console.log('straight');
     originalPoints += 4;
     pointsCounter.innerHTML = originalPoints;
     output('Straights!');
   } else if (threeOfAKind() === true) {
-    console.log('three of a kind');
     originalPoints += 3;
     pointsCounter.innerHTML = originalPoints;
     output('three of a kind');
   } else if (twoPairsOrBetter() === true) {
-    console.log('two pairs or better');
     originalPoints += 2;
     pointsCounter.innerHTML = originalPoints;
     output('two pairs or better');
   } else if (jackPair() === true || queenPair() === true || kingPair() === true) {
-    console.log('jacks or better');
     originalPoints += 1;
     pointsCounter.innerHTML = originalPoints;
     output('jacks or Better');
   } else {
-    console.log('better luck next time ya');
     originalPoints -= 1;
     pointsCounter.innerHTML = originalPoints;
-    output('Better luck next time');
+    output('OOF... Better luck next time');
   }
 };
 

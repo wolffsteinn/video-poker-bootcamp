@@ -8,15 +8,12 @@
     <title>Wolfstein's Video Poker</title>
     <link rel="stylesheet" href="general.css" />
     <link rel="stylesheet" href="queries.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Rampart+One&family=Train+One&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Reggae+One&family=Train+One&display=swap" rel="stylesheet">
   </head>
-  <body">
-    <h1>VIDEO POKER</h1>
+  <body>
+    <h1 class = "testing">VIDEO POKER</h1>
     <div class="main-container">
       <div id="top-row">
         <div class="credits">CREDITS: <span class="points"></span></div>
@@ -32,6 +29,56 @@
             ></ion-icon>
           </button>
         </div>
+      </div>
+      <p id = "scoring">HOW MUCH IS MY HAND WORTH?</p>
+      <div id = "paytable">
+      <table id = "score-table">
+        <tr>
+          <th>Winning Hand</th>
+          <th>Points Scored</th>
+        </tr>
+        <tr>
+          <td>Royal Flush</td>
+          <td>800 pts</td>
+        </tr>
+        <tr>
+          <td>Straight Flush</td>
+          <td>50 pts</td>
+        </tr>
+        <tr>
+          <td>Four of a Kind</td>
+          <td>25 pts</td>
+        </tr>
+        <tr>
+          <td>Full House</td>
+          <td>9 pts</td>
+        </tr>
+        <tr>
+          <td>Flush</td>
+          <td>6 pts</td>
+        </tr>
+        <tr>
+          <td>Straights</td>
+          <td>4 pts</td>
+        </tr>
+        <tr>
+          <td>Three of a Kind</td>
+          <td>3 pts</td>
+        </tr>
+        <tr>
+          <td>Two pairs or Better</td>
+          <td>2 pts</td>
+        </tr>
+        <tr>
+          <td>Jacks or Better</td>
+          <td>1 pt</td>
+        </tr>
+        <tr>
+          <td>Nothing</td>
+          <td>-1 pt</td>
+        </tr>
+      </table>
+      <p class = "small-text">Note: You may discard any number of cards; <br>Or not discard cards at all! <br> <b style="color: #5152c6">Click on the header to make me disappear</b></p>
       </div>
       <!-- Import program logic -->
       <script src="helperFunc.js"></script>

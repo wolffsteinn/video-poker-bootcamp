@@ -7,9 +7,9 @@ resetMsg.classList.add('reset-msg');
 resetOption.appendChild(resetMsg);
 resetMsg.innerText = '';
 
-const yesNoDiv = document.createElement("div")
-yesNoDiv.classList.add("final-btn")
-resetOption.appendChild(yesNoDiv)
+const yesNoDiv = document.createElement('div');
+yesNoDiv.classList.add('final-btn');
+resetOption.appendChild(yesNoDiv);
 
 const yesButton = document.createElement('button');
 yesButton.classList.add('yes');
@@ -21,6 +21,11 @@ noButton.classList.add('no');
 noButton.innerText = 'NO';
 yesNoDiv.appendChild(noButton);
 
+const justResetBtn = document.createElement('button');
+justResetBtn.classList.add('just-reset');
+justResetBtn.innerText = 'Reset NOW';
+resetOption.appendChild(justResetBtn)
+
 /**
  * Function to display reset message after countdown
  * @returns a display message 2s after winning hand was validated with "yes" "no" buttons for user decision
@@ -30,6 +35,7 @@ const timerToReset = () => {
     mainBox.appendChild(resetOption);
     document.querySelector('.yes').style.visibility = 'visible';
     document.querySelector('.no').style.visibility = 'visible';
+    document.querySelector('.just-reset').style.visibility = 'hidden';
     output('Ready for another round?');
   }, 2000);
 };
@@ -47,6 +53,13 @@ const timeCounter = () => {
   resetMsg.innerHTML = `Game starting in ${counter}`;
 };
 
+const resetBtnClicked = () =>{
+  clearInterval(countdown);
+  document.querySelector('.reset-msg').style.visibility = 'hidden';
+  document.querySelector('.just-reset').style.visibility = 'hidden';
+  resetEvent();
+}
+
 /**
  * Function to initialize countdown timer
  * @returns countdown timer second by second, removes decision buttons as necessary
@@ -54,16 +67,11 @@ const timeCounter = () => {
 const timerFunction = () => {
   counter -= 1;
 
-  if (counter === 0) {
-    clearInterval(countdown);
-    document.querySelector('.reset-msg').style.visibility = 'hidden';
-    // reset the counter
-    resetEvent();
-  }
   if (counter === 5) {
     document.querySelector('.yes').style.visibility = 'hidden';
     document.querySelector('.no').style.visibility = 'hidden';
     document.querySelector('.reset-msg').style.visibility = 'visible';
+    document.querySelector('.just-reset').style.visibility = 'visible';
     output('Getting the cards ready');
   }
   if (counter === 4) {
@@ -77,6 +85,13 @@ const timerFunction = () => {
   }
   if (counter === 1) {
     output('Are you ready?');
+  }
+  if (counter === 0) {
+    clearInterval(countdown);
+    document.querySelector('.reset-msg').style.visibility = 'hidden';
+    document.querySelector('.just-reset').style.visibility = 'hidden';
+    // reset the counter
+    resetEvent();
   }
   timeCounter();
 };
@@ -105,7 +120,7 @@ const runTimer = () => {
  * @returns the winning hand, timer countdown of 2s and to check how many cards are left in the deck.
  */
 const resetGame = () => {
-  topUpCards()
+  topUpCards();
   winningScenario();
   timerToReset();
 };
@@ -122,9 +137,6 @@ const noBtnClicked = () => {
   output('A pity, see you next time then!');
 };
 
-yesButton.addEventListener('click', yesBtnClicked);
-noButton.addEventListener('click', noBtnClicked);
-
-
-
-
+yesButton.addEventListener('click', () => yesBtnClicked());
+noButton.addEventListener('click', () => noBtnClicked());
+justResetBtn.addEventListener('click', () => resetBtnClicked());

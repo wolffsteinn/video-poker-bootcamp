@@ -53,13 +53,6 @@ const timeCounter = () => {
   resetMsg.innerHTML = `Game starting in ${counter}`;
 };
 
-const resetBtnClicked = () =>{
-  clearInterval(countdown);
-  document.querySelector('.reset-msg').style.visibility = 'hidden';
-  document.querySelector('.just-reset').style.visibility = 'hidden';
-  resetEvent();
-}
-
 /**
  * Function to initialize countdown timer
  * @returns countdown timer second by second, removes decision buttons as necessary
@@ -107,22 +100,12 @@ const resetEvent = () => {
 };
 
 /**
- * Function run the countdown timer
+ * Function to run the countdown timer
  * @returns the countdown timer and clears the previous interval to prevent speed up of countdown
  */
 const runTimer = () => {
   clearInterval(countdown);
   countdown = setInterval(timerFunction, delayInMilliseconds);
-};
-
-/**
- * Function to reset game
- * @returns the winning hand, timer countdown of 2s and to check how many cards are left in the deck.
- */
-const resetGame = () => {
-  topUpCards();
-  winningScenario();
-  timerToReset();
 };
 
 // after user clickes "yes" to continue game
@@ -135,6 +118,24 @@ const noBtnClicked = () => {
   cardContainer.innerHTML = '';
   resetOption.innerHTML = '';
   output('A pity, see you next time then!');
+};
+
+// if user clicks on reset button instead of waiting for countdown to end
+const resetBtnClicked = () =>{
+  clearInterval(countdown);
+  document.querySelector('.reset-msg').style.visibility = 'hidden';
+  document.querySelector('.just-reset').style.visibility = 'hidden';
+  resetEvent();
+}
+
+/**
+ * Function to reset game
+ * @returns the winning hand, timer countdown of 2s and to check how many cards are left in the deck.
+ */
+const resetGame = () => {
+  topUpCards();
+  winningScenario();
+  timerToReset();
 };
 
 yesButton.addEventListener('click', () => yesBtnClicked());

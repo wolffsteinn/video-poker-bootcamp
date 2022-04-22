@@ -12,16 +12,11 @@ const emptyAll = () => {
   numOfPair = 0;
 };
 
-/**
- * Function to replace cards selected by user
- * @returns cards that were newly extracted from the deck and appended to the browser
- */
 const replaceCardsFunc = () => {
   // moving to replace cards; canClick to false
   canClickCard = false;
   // check if cards in the array are nearly empty. if so, top up
   topUpCards();
-  console.log('click successful');
   for (let i = 0; i < cardEl.length; i += 1) {
     if (cardEl[i].classList.contains('flipcard')) {
       newCard = deck.pop();
@@ -32,16 +27,11 @@ const replaceCardsFunc = () => {
       initialDraw.splice(i, 1, newCard);
     }
     cardContainer.appendChild(cardEl[i]);
-    console.log(initialDraw);
-    console.log(cardEl);
   }
   resetGame();
 };
 
-/**
- * Function to select cards to be disposed
- * @returns cards with the class selector "flipcard" which are clicked to be disposed
- */
+
 const disposeCardsFunc = (cards) => {
   for (let i = 0; i < cardEl.length; i += 1) {
     if (cards === i & canClickCard === true) {

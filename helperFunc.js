@@ -1,16 +1,5 @@
-/**
- * Function to get random numerical values for the purpose of shuffling cards later
- * @param max the maximum number accepted
- * @returns a randomly generated numerical value
- */
-
 const getRandomIndex = (max) => Math.floor(Math.random() * max);
 
-/**
- * Function to shuffle cards
- * @param card {card} that is fed into the function to get shuffled
- * @returns a randomly generated shuffled deck of cards
- */
 const shuffleCards = (cards) => {
   for (let currentIndex = 0; currentIndex < cards.length; currentIndex += 1) {
     const randomIndex = getRandomIndex(cards.length);
@@ -21,11 +10,6 @@ const shuffleCards = (cards) => {
   }
   return cards;
 };
-
-/**
- * Function to create a 52 card deck
- * @returns an ordered deck of 52 cards; to which would be fed into shuffleCards func to shuffle the deck
- */
 
 const createDeck = () => {
   const deckTwo = [];
@@ -48,7 +32,7 @@ const createDeck = () => {
       currentSuitColor = 'black';
     }
 
-    for (let rankCounter = 1; rankCounter < 13; rankCounter += 1) {
+    for (let rankCounter = 1; rankCounter <= 13; rankCounter += 1) {
       let cardName = `${rankCounter}`;
       let displayName = `${rankCounter}`;
 
@@ -200,7 +184,6 @@ const playBtnHit = () => {
   document.querySelector('.mute-btn').style.display = 'block';
   document.querySelector('.play-btn').style.display = 'none';
   document.querySelector('.audio').muted = true;
-  console.log('play btn hit');
 };
 
 // when user hits the mute button, song continues to play
@@ -209,7 +192,6 @@ const muteBtnHit = () => {
   document.querySelector('.mute-btn').style.display = 'none';
   document.querySelector('.audio').play();
   document.querySelector('.audio').muted = false;
-  console.log('mute btn hit');
 };
 
 playBtn.addEventListener('click', () => playBtnHit());
@@ -224,13 +206,11 @@ payTable.style.display = 'none';
 const testing = document.querySelector('.testing');
 
 const payTableAppear = () => {
-  console.log('clicked yet');
   payTable.style.display = 'block';
   payTable.style.visibility = 'visible';
 };
 
 const payTableDisapear = () => {
-  console.log('clicked');
   payTable.style.visibility = 'hidden';
 };
 

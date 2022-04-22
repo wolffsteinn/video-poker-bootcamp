@@ -103,7 +103,6 @@ const checkingValuesOfObj = () => {
   for (let i = 0; i < valuesArray.length; i += 1) {
     if (valuesArray[i] === 2) {
       numOfPair += 1;
-      console.log(numOfPair);
     }
   }
   if (valuesArray.length === 5) {
@@ -130,14 +129,12 @@ const sorting = () => {
   });
 };
 sorting();
-console.log(valuesinAscOrderArray);
 
 const straights = () => {
   differenceIsOne = 0;
   for (let i = 0; i < valuesinAscOrderArray.length; i += 1) {
     if (valuesinAscOrderArray[i + 1] - valuesinAscOrderArray[i] === 1) {
       differenceIsOne += 1;
-      console.log(differenceIsOne);
     }
   }
   if (differenceIsOne === 4) {

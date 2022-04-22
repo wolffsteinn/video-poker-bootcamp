@@ -45,10 +45,6 @@ const delayInMilliseconds = 1000; // one second
 let counter = 6;
 let countdown;
 
-/**
- * Function for countdown timer
- * @returns the message countdown
- */
 const timeCounter = () => {
   resetMsg.innerHTML = `Game starting in ${counter}`;
 };

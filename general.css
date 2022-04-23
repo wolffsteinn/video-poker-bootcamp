@@ -61,7 +61,7 @@ h1 {
   flex-direction: column;
   border: 1rem solid #b7b8ce;
   width: 70rem;
-  height: 55.5rem;
+  height: 60rem;
   margin: auto;
   background-color: #041c4490;
 }
@@ -108,7 +108,7 @@ h1 {
 }
 
 .message-output {
-  font-size: 3.2rem;
+  font-size: 3rem;
   color: #e9edf9;
   letter-spacing: 0.2rem;
   align-self: center;
@@ -129,6 +129,7 @@ h1 {
   color: #e9edf9;
   font-size: 2.4rem;
   letter-spacing: 0.2rem;
+  margin-bottom: 1.2rem;
 }
 
 .reset-option-box {

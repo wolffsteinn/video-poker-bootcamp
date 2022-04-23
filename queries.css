@@ -13,7 +13,7 @@
   }
   .main-container {
     width: 55rem;
-    height: 50rem;
+    height: 51rem;
   }
   .card--container {
     padding: 1rem;
@@ -63,8 +63,8 @@
     font-size: 1.6rem;
   }
   .main-container {
-    width: 45rem;
-    height: 40rem;
+    width: 50rem;
+    height: 50rem;
   }
   .card--container {
     display: flex;

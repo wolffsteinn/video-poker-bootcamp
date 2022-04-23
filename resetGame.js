@@ -36,7 +36,7 @@ const timerToReset = () => {
     document.querySelector('.yes').style.visibility = 'visible';
     document.querySelector('.no').style.visibility = 'visible';
     document.querySelector('.just-reset').style.visibility = 'hidden';
-    output('Ready for another round?');
+    output(`${gameInfo.innerHTML} <br> Ready for another round?`);
   }, 2000);
 };
 
